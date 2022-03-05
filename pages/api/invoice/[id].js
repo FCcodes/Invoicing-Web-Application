@@ -2,7 +2,7 @@ const fsPromises = require("fs").promises
 const path = require("path")
 
 const invoiceDB = {
-	invoices: require("../../../model/invoices.json"),
+	invoices: require("../model/invoices.json"),
 	setInvoice: function (data) {
 		this.invoices = data;
 	},

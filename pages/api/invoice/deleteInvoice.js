@@ -23,7 +23,7 @@ export default async function handler(req, res) {
 	//updating mock database
 	try {
 		invoiceDB.setInvoice([...newInvoices]);
-		await fsPromises.writeFile("C:/Users/Fahim/Documents/Web projects/invoice-app/model/invoices.json", JSON.stringify(newInvoices));
+		await fsPromises.writeFile("../model/invoices.json", JSON.stringify(newInvoices));
         res.status(204).redirect('/')
         
 	} catch (error) {

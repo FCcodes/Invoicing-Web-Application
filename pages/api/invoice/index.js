@@ -2,7 +2,7 @@ const fsPromises = require("fs").promises
 const path = require("path").promises
 
 let invoiceDB = {
-    invoices: require("../../../model/invoices.json")	
+    invoices: require("../model/invoices.json")	
 }
 
 export default async function handler(req, res){    

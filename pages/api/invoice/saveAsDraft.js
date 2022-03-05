@@ -3,7 +3,7 @@ const path = require("path");
 const {v4 : uuid4} = require("uuid")
 
 const invoiceDB = {
-	invoices: require("../../../model/invoices.json"),
+	invoices: require("..//model/invoices.json"),
 	setInvoice: function (data) {
 		this.invoices = data;
 	},
@@ -29,7 +29,7 @@ export default async function handler(req, res) {
     let otherInvoices = invoiceDB.invoices
 	try {
 		invoiceDB.setInvoice([...otherInvoices, refactorInvoice]);
-		fsPromises.writeFile("C:/Users/Fahim/Documents/Web projects/invoice-app/model/invoices.json", JSON.stringify(invoiceDB.invoices));
+		fsPromises.writeFile("../model/invoices.json", JSON.stringify(invoiceDB.invoices));
 	} catch (error) {
         console.log(error)
         res.status(500).end()

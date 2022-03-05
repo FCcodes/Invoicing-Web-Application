@@ -45,7 +45,7 @@ export default async function handler(req, res) {
 				//updating mock InvoiceDB
 				try {
 					invoiceDB.setInvoice([...otherInvoices, payload]);
-					fsPromises.writeFile("C:/Users/Fahim/Documents/Web projects/invoice-app/model/invoices.json", JSON.stringify(invoiceDB.invoices));
+					fsPromises.writeFile("../model/invoices.json", JSON.stringify(invoiceDB.invoices));
 				} catch (error) {
 					console.log(error);
 					res.status(500).json({ "message": "Seems something went wrong on the server" });
@@ -64,7 +64,7 @@ export default async function handler(req, res) {
 				//Add new invoice to invoiceDB
 				try {
 					invoiceDB.setInvoice([... invoices, payload]);
-					fsPromises.writeFile("C:/Users/Fahim/Documents/Web projects/invoice-app/model/invoices.json", JSON.stringify(invoiceDB.invoices));
+					fsPromises.writeFile("../model/invoices.json", JSON.stringify(invoiceDB.invoices));
 				} catch (error) {
 					console.log(error.message);
 					res.status(500).json({ "message": "seems we are having trouble on the server" });
